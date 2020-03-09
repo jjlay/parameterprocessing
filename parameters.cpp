@@ -79,6 +79,7 @@ std::map<std::string, std::string> fetchJSON(std::string filename) {
 
     if (!file.is_open()) {
         std::cerr << "Unable to open " << filename << std::endl;
+        exit(-1);
     }
     
     std::string line;
@@ -105,7 +106,6 @@ std::map<std::string, std::string> fetchJSON(std::string filename) {
         }
 
         if ((line != "{") && line != "}" && line.size() > 0) {
-            std::cout << "Processing :: " << line << std::endl;
             line = trim(line);
             std::cout << "Line is :: " << line << std::endl;
         }
