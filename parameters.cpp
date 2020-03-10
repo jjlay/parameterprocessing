@@ -55,70 +55,9 @@ std::map<std::string, std::string> parameters(int argc, char *argv[]) {
         }
     }
 
-    for (auto v : p) {
-        if (v.first == "JSON") {
-            auto json = fetchJSON(v.second);
-        }
-
-    }
     return p;
 }
 
-
-//
-// Function: fetchJSON()
-//
-
-std::map<std::string, std::string> fetchJSON(std::string filename) {
-
-    std::map<std::string, std::string> p;
-    std::string sw, pa;
-
-    std::fstream file;
-    file.open(filename, std::ios::in);
-
-    if (!file.is_open()) {
-        std::cerr << "Unable to open " << filename << std::endl;
-        exit(-1);
-    }
-    
-    std::string line;
-
-    int start = 0;
-
-    while (std::getline(file, line)) {
-        if (line == "{") {
-            if (start == 0)
-                start = 1;
-            else {
-                std::cerr << "JSON file has syntax error" << std::endl;
-                exit(-1);
-            }
-        }
-
-        if (line == "}") {
-            if (start == 1)
-                start = 0;
-            else {
-                std::cerr << "JSON file has syntax error" << std::endl;
-                exit(-1);
-            }
-        }
-
-        if ((line != "{") && line != "}" && line.size() > 0) {
-            line = trim(line);
-            std::cout << "Line is :: " << line << std::endl;
-        }
-
-
-    }
-    
-    
-    
-    file.close();
-
-    return p;
-}
 
 
 std::string trim(std::string inString) {
