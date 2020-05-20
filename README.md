@@ -1,8 +1,3 @@
-
-
-
-> Written with [StackEdit](http# parameterprocessing
-
 ## Summary
 A function for parsing command line parameters
 
