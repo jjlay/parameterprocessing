@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -std=c++2a -ggdb
+CFLAGS = -std=c++17 -ggdb
 
 
 main.out : main.o parameters.o
