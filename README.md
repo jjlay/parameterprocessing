@@ -12,7 +12,7 @@ std::map<std::string, std::string> parameters(int argc, char *argv[]);
 `argv` - The command line parameters
 
 ### Returns
-A standard template library map where the key value is the parameter and the value part of the map is the value of the parameter. In the event that the command line argument is a switch, the value is empty.
+A standard template library [map](http://www.cplusplus.com/reference/map/map/) where the key value is the parameter and the value part of the map is the value of the parameter. In the event that the command line argument is a switch, the value is empty.
 
 ## Example
 
